@@ -1,8 +1,8 @@
-type Props = {
+type UserCardProps = {
   name: string;
   comment: string;
 };
-export default function UserCard({ name, comment }: Props) {
+export default function UserCard({ name, comment }: UserCardProps) {
   return (
     <div className="border-4 p-4 rounded-xl m-8">
       <h1 className="text-2xl">{name}</h1>

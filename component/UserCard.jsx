@@ -1,8 +1,8 @@
-export default function UserCard({ name, role }) {
+export default function UserCard({ name, comment }) {
   return (
     <div>
       <h3>{name}</h3>
-      <p>{role}</p>
+      <p>{comment}</p>
     </div>
   );
 }

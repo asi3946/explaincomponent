@@ -5,6 +5,12 @@ type DetailPageProps = {
   searchParams: Promise<{ name?: string; comment?: string }>;
 };
 
+const imageData: Record<string, string> = {
+  "1": "/taro.png",
+  "2": "/jiro.jpg",
+  "3": "/saburo.png",
+};
+
 export default async function DetailPage({
   params,
   searchParams,
@@ -12,13 +18,15 @@ export default async function DetailPage({
   const { id } = await params;
   const { name, comment } = await searchParams;
 
+  const dataUrl = imageData[id] || "";
+
   return (
     <div className="p-8">
-      <DetailCard 
-        image="" 
-        name={name || ""} 
-        comment={comment || ""} 
-        />
+      <DetailCard
+        image={dataUrl}
+        name={name || ""}
+        comment={comment || ""}
+      />
     </div>
   );
 }

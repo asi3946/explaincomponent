@@ -9,7 +9,12 @@ export default function CardList({ cards }: CardListProps) {
     <div>
       {cards.map((card) => {
         return (
-          <UserCard key={card.id} name={card.name} comment={card.comment} />
+          <UserCard
+            key={card.id}
+            id={card.id}
+            name={card.name}
+            comment={card.comment}
+          />
         );
       })}
     </div>

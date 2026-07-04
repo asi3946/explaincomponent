@@ -1,12 +1,23 @@
+import Link from "next/link";
+
 type UserCardProps = {
+  id: string;
   name: string;
   comment: string;
 };
-export default function UserCard({ name, comment }: UserCardProps) {
+
+export default function UserCard({ id, name, comment }: UserCardProps) {
   return (
-    <div className="border-4 p-4 rounded-xl m-8">
-      <h1 className="text-2xl">{name}</h1>
-      <p>{comment}</p>
-    </div>
+    <Link
+      href={{
+        pathname: `/${id}`,
+        query: { name, comment },
+      }}
+    >
+      <div className="border-4 p-4 rounded-xl m-8">
+        <h1 className="text-2xl">{name}</h1>
+        <p>{comment}</p>
+      </div>
+    </Link>
   );
 }

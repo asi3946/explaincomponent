@@ -1,12 +1,12 @@
 import Link from "next/link";
 
-type UserCardProps = {
+interface UserCardProps {
   id: string;
   name: string;
   comment: string;
-};
+}
 
-export default function UserCard({ id, name, comment }: UserCardProps) {
+const UserCard = ({ id, name, comment }: UserCardProps) => {
   return (
     <Link
       href={{
@@ -20,4 +20,5 @@ export default function UserCard({ id, name, comment }: UserCardProps) {
       </div>
     </Link>
   );
-}
+};
+export default UserCard;

@@ -1,10 +1,10 @@
 import UserCard from "./UserCard";
 
-type CardListProps = {
+interface CardListProps {
   cards: { id: string; name: string; comment: string }[];
-};
+}
 
-export default function CardList({ cards }: CardListProps) {
+const CardList = ({ cards }: CardListProps) => {
   return (
     <div>
       {cards.map((card) => {
@@ -19,4 +19,6 @@ export default function CardList({ cards }: CardListProps) {
       })}
     </div>
   );
-}
+};
+
+export default CardList;

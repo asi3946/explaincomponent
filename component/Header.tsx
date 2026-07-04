@@ -1,14 +1,18 @@
-type HeaderProps = {
+import styles from "./Header.module.css";
+
+interface HeaderProps {
     title: string
 };
 
-export default function Header ( Props :HeaderProps){
+const Header = ( Props :HeaderProps)=>{
     return(
-        <div className="border-t-4 border-b-4 mt-1 mb-1">
-            <div className="pl-10 p-3">
+        <div className={styles.Header}>
+            <div className={styles.title}>
                 <p className="">{Props.title}</p>
             </div>
         </div>
     )
-}
+};
+
+export default Header;
 

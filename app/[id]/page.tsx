@@ -1,6 +1,8 @@
 import DetailCard from "@/component/DetailCard";
+import styles from "@/app/[id]/Page.module.css"
+import { defaultConfig } from "next/dist/server/config-shared";
 
-type DetailPageProps = {
+interface DetailPageProps {
   params: Promise<{ id: string }>;
   searchParams: Promise<{ name?: string; comment?: string }>;
 };
@@ -11,17 +13,17 @@ const imageData: Record<string, string> = {
   "3": "/saburo.png",
 };
 
-export default async function DetailPage({
+const DetailPage = async ({
   params,
   searchParams,
-}: DetailPageProps) {
+}: DetailPageProps) => {
   const { id } = await params;
   const { name, comment } = await searchParams;
 
   const dataUrl = imageData[id] || "";
 
   return (
-    <div className="p-8">
+    <div className="{main.module.css}">
       <DetailCard
         image={dataUrl}
         name={name || ""}
@@ -30,3 +32,5 @@ export default async function DetailPage({
     </div>
   );
 }
+
+export default DetailPage;

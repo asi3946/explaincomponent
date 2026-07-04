@@ -1,4 +1,4 @@
-import CardList from "@/component/CardList";
+import CardList from "../component/CardList";
 
 const users = [
   { id: "1", name: "田中 太郎", comment: "数学が好きです" },

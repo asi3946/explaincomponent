@@ -8,12 +8,7 @@ type UserCardProps = {
 
 export default function UserCard({ id, name, comment }: UserCardProps) {
   return (
-    <Link
-      href={{
-        pathname: `/${id}`,
-        query: { name, comment },
-      }}
-    >
+    <Link href={`/${id}`}>
       <div className="border-4 p-4 rounded-xl m-8">
         <h1 className="text-2xl">{name}</h1>
         <p>{comment}</p>

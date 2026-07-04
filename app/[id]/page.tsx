@@ -1,33 +1,25 @@
 import DetailCard from "@/component/DetailCard";
-import styles from "@/app/[id]/Page.module.css"
-import { defaultConfig } from "next/dist/server/config-shared";
+import styles from "@/app/[id]/Page.module.css";
+import { users } from "@/data/user"
 
 interface DetailPageProps {
-  params: Promise<{ id: string }>;
-  searchParams: Promise<{ name?: string; comment?: string }>;
-};
-
-const imageData: Record<string, string> = {
-  "1": "/taro.png",
-  "2": "/jiro.jpg",
-  "3": "/saburo.png",
+  params: { id: string };
 };
 
 const DetailPage = async ({
-  params,
-  searchParams,
+  params
 }: DetailPageProps) => {
   const { id } = await params;
-  const { name, comment } = await searchParams;
+  const user = users.find((user) => user.id === id);
 
-  const dataUrl = imageData[id] || "";
-
+  if(!user) return <div>ユーザーが見つかりません</div>
+  
   return (
     <div className="{main.module.css}">
       <DetailCard
-        image={dataUrl}
-        name={name || ""}
-        comment={comment || ""}
+        image={user.imageUrl || ""}
+        name={user.name || ""}
+        comment={user.comment || ""}
       />
     </div>
   );

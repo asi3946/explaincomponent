@@ -1,8 +1,8 @@
 import UserCard from "./UserCard";
 
-type CardListProps = {
+interface CardListProps {
   cards: { id: string; name: string; comment: string }[];
-};
+}
 
 const CardList = ({ cards }: CardListProps) => {
   return (

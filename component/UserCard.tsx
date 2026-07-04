@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-type UserCardProps = {
+interface UserCardProps {
   id: string;
   name: string;
   comment: string;
-};
+}
 
 const UserCard = ({ id, name, comment }: UserCardProps) => {
   return (

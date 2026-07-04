@@ -6,10 +6,12 @@ const users = [
   { id: "3", name: "田中 三郎", comment: "三河屋で働いています" },
 ];
 
-export default function Home() {
+const Home = () => {
   return (
     <div>
       <CardList cards={users} />
     </div>
   );
-}
+};
+
+export default Home;

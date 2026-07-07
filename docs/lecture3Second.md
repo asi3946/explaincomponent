@@ -192,7 +192,7 @@ const DetailCard = ({ image, name, comment }: UserDetailProps) => {
           <Image src={image} alt={name} width={300} height={150} className={styles.image} />
         </div>
         <div className={styles.commentSpace}>
-          <span className={styles.commet}>{comment}</span>
+          <span className={styles.comment}>{comment}</span>
         </div>
       </div>
     </div>

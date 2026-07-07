@@ -35,7 +35,7 @@ paginate: true
 
 ---
 
-# 実装1：Propsによるデータの受け取り
+# 実装1：UserCardの実装
 
 UserCard.jsx
 ```jsx
@@ -44,7 +44,7 @@ UserCard.jsx
 const UserCard = ({ name, comment }) => {
   return (
     <div>
-      <h3>{name}</h3>
+      <h2>{name}</h2>
       <p>{comment}</p>
     </div>
   );
@@ -122,7 +122,7 @@ UserCard.module.css
   border-radius: 12px;
   margin: 32px;
 }
-.title {
+.name {
   font-size: 24px;
 }
 ```
@@ -142,7 +142,7 @@ import styles from "./UserCard.module.css";
 const UserCard = ({ name, comment }) => {
   return (
     <div className={styles.card}>
-      <h1 className={styles.title}>{name}</h1>
+      <h2 className={styles.name}>{name}</h2>
       <p>{comment}</p>
     </div>
   );
@@ -189,8 +189,15 @@ section {
 
 # 実装3：TSXへの変更と型定義
 
+<style scoped>
+  pre {
+    font-size: 18px;
+  }
+</style>
 UserCard.tsx
 ```tsx
+import styles from "./UserCard.module.css";
+
 interface UserCardProps {
   name: string;
   comment: string;
@@ -198,8 +205,8 @@ interface UserCardProps {
 
 const UserCard = ({ name, comment }: UserCardProps) => {
   return (
-    <div>
-      <h3>{name}</h3>
+    <div className={styles.card}>
+      <h2 className={styles.name}>{name}</h2>
       <p>{comment}</p>
     </div>
   );
